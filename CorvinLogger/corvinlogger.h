@@ -5,6 +5,7 @@
 #include <QVector>
 
 #include "corvinlogger_global.h"
+#include "interfaces/iloggable.h"
 #include "loglevels.h"
 
 class CORVINLOGGERSHARED_EXPORT CorvinLogger
@@ -17,6 +18,7 @@ public:
     static void logInfo(QString msg);
     static void logDebug(QString msg);
     static void logFatal(QString msg);
+    static void logObject(std::shared_ptr<ILoggable> object);
 
 
 

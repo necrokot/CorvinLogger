@@ -31,3 +31,8 @@ void CorvinLogger::logFatal(QString msg)
 {
 
 }
+
+void CorvinLogger::logObject(std::shared_ptr<ILoggable> object)
+{
+    qDebug() << object->getLog();
+}

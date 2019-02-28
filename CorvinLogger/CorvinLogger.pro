@@ -27,7 +27,8 @@ SOURCES += \
 
 HEADERS += \
         corvinlogger.h \
-        corvinlogger_global.h 
+        corvinlogger_global.h \ 
+    loglevels.h
 
 unix {
     target.path = /usr/lib

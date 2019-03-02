@@ -13,11 +13,6 @@ CorvinLogger &CorvinLogger::getInstance()
     return instance;
 }
 
-void CorvinLogger::log(QString msg)
-{
-    qDebug() << QDateTime::currentDateTime() << msg;
-}
-
 void CorvinLogger::logInfo(QString msg)
 {
 }

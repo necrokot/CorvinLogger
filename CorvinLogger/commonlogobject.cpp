@@ -1,19 +1,19 @@
-#include "logentity.h"
+#include "commonlogobject.h"
 
 
-LogEntity::LogEntity(QString message, LogLevel logLevel, QDateTime timestamp)
+CommonLogObject::CommonLogObject(QString message, LogLevel logLevel, QDateTime timestamp)
     : m_message(message)
     , m_logLevel(logLevel)
     , m_timestamp(timestamp.toString(Qt::DateFormat::ISODate))
 {
 }
 
-LogEntity::LogEntity(QString message, LogLevel logLevel)
-    : LogEntity(message, logLevel, QDateTime::currentDateTime())
+CommonLogObject::CommonLogObject(QString message, LogLevel logLevel)
+    : CommonLogObject(message, logLevel, QDateTime::currentDateTime())
 {
 }
 
-QString LogEntity::getLog()
+QString CommonLogObject::getLog()
 {
     QJsonDocument doc;
     QJsonObject obj;

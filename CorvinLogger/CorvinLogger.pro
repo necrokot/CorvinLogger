@@ -23,15 +23,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        commonlogobject.cpp \
         corvinlogger.cpp \
-        logentity.cpp
+        loglevels.cpp \
+        sinks/consilesink.cpp
 
 HEADERS += \
+        commonlogobject.h \
         corvinlogger.h \
         corvinlogger_global.h \  \
         interfaces/iloggable.h \
-        logentity.h \
-        loglevels.h
+        interfaces/isink.h \
+        loglevels.h \
+        sinks/consilesink.h
 
 unix {
     target.path = /usr/lib

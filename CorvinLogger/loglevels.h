@@ -10,15 +10,5 @@ enum class LogLevel
     FATAL
 };
 
-QString logLevelToString(LogLevel level)
-{
-    switch (level) {
-    case LogLevel::INFO:
-        return QStringLiteral("INFO");
-    case LogLevel::DEBUG:
-        return QStringLiteral("DEBUG");
-    case LogLevel::FATAL:
-        return QStringLiteral("FATAL");
-    }
-}
+QString logLevelToString(LogLevel level);
 #endif // LOGLEVELS_H

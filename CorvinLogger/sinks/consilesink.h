@@ -4,10 +4,11 @@
 #include "interfaces/isink.h"
 #include "interfaces/iloggable.h"
 
-class ConsileSink : public ISink
+class ConsoleSink : public ISink
 {
 public:
-    ConsileSink();
+    ConsoleSink();
+    ~ConsoleSink() override;
 
     void write(std::shared_ptr<ILoggable> logObject) override;
 

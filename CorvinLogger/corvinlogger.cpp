@@ -15,6 +15,7 @@ CorvinLogger &CorvinLogger::getInstance()
 
 void CorvinLogger::logInfo(QString msg)
 {
+    qDebug() << msg;
 }
 
 void CorvinLogger::logDebug(QString msg)

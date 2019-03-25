@@ -2,12 +2,17 @@
 
 #include <iostream>
 
-ConsileSink::ConsileSink()
+ConsoleSink::ConsoleSink()
 {
 
 }
 
-void ConsileSink::write(std::shared_ptr<ILoggable> logObject)
+ConsoleSink::~ConsoleSink()
+{
+
+}
+
+void ConsoleSink::write(std::shared_ptr<ILoggable> logObject)
 {
     using namespace std;
 

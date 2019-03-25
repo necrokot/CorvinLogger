@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    CorvinLogger::getInstance().log("Test!");
+    //CorvinLogger::getInstance().log("Test!");
     CorvinLogger::getInstance().logInfo("Test!");
 }
 

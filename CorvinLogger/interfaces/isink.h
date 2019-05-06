@@ -10,8 +10,9 @@
 class CORVINLOGGERSHARED_EXPORT ISink {
 public:
     ISink() = default;
-    virtual ~ISink() = 0;
+    virtual ~ISink() = default;
 
-    virtual void write(std::shared_ptr<ILoggable>) = 0;
+    virtual void write(const std::shared_ptr<ILoggable> &) = 0;
+    virtual void write(QString) = 0;
 };
 #endif // ISINK_H

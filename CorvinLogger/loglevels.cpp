@@ -3,11 +3,19 @@
 QString logLevelToString(LogLevel level)
 {
     switch (level) {
-    case LogLevel::INFO:
-        return QStringLiteral("INFO");
-    case LogLevel::DEBUG:
-        return QStringLiteral("DEBUG");
-    case LogLevel::FATAL:
-        return QStringLiteral("FATAL");
+        case LogLevel::DEBUG:
+            return QStringLiteral("DEBUG");
+
+        case LogLevel::INFO:
+            return QStringLiteral("INFO");
+
+        case LogLevel::WARNING:
+            return QStringLiteral("WARNING");
+
+        case LogLevel::CRITICAL:
+            return QStringLiteral("CRITICAL");
+
+        case LogLevel::FATAL:
+            return QStringLiteral("FATAL");
     }
 }

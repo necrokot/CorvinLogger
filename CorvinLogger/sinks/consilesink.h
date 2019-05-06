@@ -10,7 +10,8 @@ public:
     ConsoleSink();
     ~ConsoleSink() override;
 
-    void write(std::shared_ptr<ILoggable> logObject) override;
+    void write(const std::shared_ptr<ILoggable> &logObject) override;
+    void write(QString msg) override;
 
 };
 

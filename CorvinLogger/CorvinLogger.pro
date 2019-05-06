@@ -35,7 +35,8 @@ HEADERS += \
         interfaces/iloggable.h \
         interfaces/isink.h \
         loglevels.h \
-        sinks/consilesink.h
+        sinks/consilesink.h \
+    logmacros.h
 
 unix {
     target.path = /usr/lib

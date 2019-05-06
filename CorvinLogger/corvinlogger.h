@@ -11,34 +11,30 @@
 
 #include "loglevels.h"
 
-
 class CORVINLOGGERSHARED_EXPORT CorvinLogger
 {
-
 public:
-    static CorvinLogger& getInstance();
+    static CorvinLogger &getInstance();
 
-    void enableLogLevel(LogLevel level);
-    void disableLogLevel(LogLevel level);
+    void addSink(LogLevel level, const std::shared_ptr<ISink> &sink);
+    void addSink(QList<LogLevel> levels, const std::shared_ptr<ISink> &sink);
 
-    void enableLogLevel(QList<LogLevel> levels);
-    void disableLogLevel(QList<LogLevel> levels);
-
-    //static void setSinkForLogLevel(LogLevel level, std::shared_ptr<ISink> sink);
+    // static void setSinkForLogLevel(LogLevel level, std::shared_ptr<ISink> sink);
     void setGlobalSink(std::shared_ptr<ISink> sink);
 
+    void logMsg(LogLevel level, const QString &msg, const QString &file, int line);
+    void logMsg(LogLevel level, const std::shared_ptr<ILoggable> &object, const QString &file, int line);
 
-    void logObject(std::shared_ptr<ILoggable> object);
-
-    void logInfo(QString msg);
-    void logDebug(QString msg);
-    void logFatal(QString msg);
+//    void logDebug(const QString &msg);
+//    void logInfo(const QString &msg, QString file, int line);
+//    void logWarning(const QString &msg);
+//    void logCritical(const QString &msg);
+//    void logFatal(const QString &msg);
 
 private:
     explicit CorvinLogger();
 
-
-    QMap<LogLevel, bool> m_enabledLogLevels;
+    QMap<LogLevel, QList<std::shared_ptr<ISink>>> sinks;
 };
 
 #endif // CORVINLOGGER_H
